@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 html,
 body {
     min-height: 100%;
-    background-color: ${(props) => props.theme.dark};
+    background-color: ${({ theme }) => theme.dark};
 }
 `;
 

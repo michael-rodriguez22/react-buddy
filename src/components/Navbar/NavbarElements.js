@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: ${(props) => props.theme.primary};
+  background: ${({ theme }) => theme.primary};
   height: 80px;
   /* margin-top: -80px; */
   display: flex;
@@ -30,7 +30,7 @@ export const NavContainer = styled.div`
 `;
 
 export const NavLogo = styled(RouterLink)`
-  color: ${(props) => props.theme.secondary};
+  color: ${({ theme }) => theme.secondary};
   justify-self: flex-start;
   cursor: pointer;
   font-size: 2rem;
@@ -52,7 +52,7 @@ export const Icon = styled.div`
     right: 0;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
-    color: ${(props) => props.theme.secondary};
+    color: ${({ theme }) => theme.secondary};
   }
 `;
 
@@ -74,7 +74,7 @@ export const NavLi = styled.li`
 
 export const NavLink = styled(ScrollLink)`
   cursor: pointer;
-  color: ${(props) => props.theme.secondary};
+  color: ${({ theme }) => theme.secondary};
   font-size: 1.3rem;
   display: flex;
   align-items: center;
@@ -83,7 +83,7 @@ export const NavLink = styled(ScrollLink)`
   height: 100%;
 
   &.active {
-    border-bottom: 3px solid ${(props) => props.theme.secondary};
+    border-bottom: 3px solid ${({ theme }) => theme.secondary};
   }
 `;
 
@@ -99,8 +99,8 @@ export const NavButton = styled.nav`
 export const NavButtonLink = styled(RouterLink)`
   cursor: pointer;
   border-radius: 50px;
-  background: ${(props) => props.theme.tertiary};
-  color: ${(props) => props.theme.light};
+  background: ${({ theme }) => theme.tertiary};
+  color: ${({ theme }) => theme.light};
   border-radius: 50px;
   white-space: nowrap;
   padding: 10px 22px;
@@ -111,6 +111,6 @@ export const NavButtonLink = styled(RouterLink)`
   text-decoration: none;
 
   &:hover {
-    background: ${(props) => props.theme.secondary};
+    background: ${({ theme }) => theme.secondary};
   }
 `;

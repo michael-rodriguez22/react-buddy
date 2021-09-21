@@ -1,6 +1,6 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { Navbar } from "./components";
+import { Navbar, Sidebar } from "./components";
 import GlobalStyle from "./globalStyles";
 
 const theme = {
@@ -17,6 +17,7 @@ function App() {
       <Router>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
+          <Sidebar />
           <Navbar />
         </ThemeProvider>
       </Router>
