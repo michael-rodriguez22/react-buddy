@@ -62,6 +62,8 @@ export const NavUl = styled.ul`
   list-style: none;
   text-align: center;
   margin-right: 1rem;
+  justify-content: space-between;
+  min-width: 44%;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -69,7 +71,7 @@ export const NavUl = styled.ul`
 `;
 
 export const NavLi = styled.li`
-  height: 80px;
+  height: 69px;
 `;
 
 export const NavLink = styled(ScrollLink)`

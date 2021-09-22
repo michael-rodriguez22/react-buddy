@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   SidebarContainer,
   Icon,
@@ -8,12 +9,12 @@ import {
 } from "./SidebarElements";
 import { FaTimes } from "react-icons/fa";
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, toggle }) => {
   return (
     <>
-      <SidebarContainer isOpen>
+      <SidebarContainer isOpen={isOpen}>
         <Icon>
-          <FaTimes style={{ color: (props) => props.theme.light }} />
+          <FaTimes onClick={() => toggle(!isOpen)} />
         </Icon>
         <div>
           <SidebarMenu>

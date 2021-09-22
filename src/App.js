@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Navbar, Sidebar } from "./components";
@@ -12,13 +13,15 @@ const theme = {
 };
 
 function App() {
+  const [sideOpen, toggleSideOpen] = useState(false);
+
   return (
     <>
       <Router>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <Sidebar />
-          <Navbar />
+          <Sidebar isOpen={sideOpen} toggle={toggleSideOpen} />
+          <Navbar toggle={toggleSideOpen} />
         </ThemeProvider>
       </Router>
     </>

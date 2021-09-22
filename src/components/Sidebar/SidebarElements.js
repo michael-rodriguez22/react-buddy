@@ -25,6 +25,7 @@ export const Icon = styled.div`
   right: 1.5rem;
   background: transparent;
   font-size: 2rem;
+  color: ${({ theme }) => theme.secondary};
   outline: none;
 `;
 
