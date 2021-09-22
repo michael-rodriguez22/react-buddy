@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   SidebarContainer,
   Icon,
@@ -14,12 +13,12 @@ const Sidebar = ({ isOpen, toggle }) => {
     <>
       <SidebarContainer isOpen={isOpen}>
         <Icon>
-          <FaTimes onClick={() => toggle(!isOpen)} />
+          <FaTimes onClick={toggle} />
         </Icon>
         <div>
           <SidebarMenu>
             <SidebarLink to="about">About</SidebarLink>
-            <SidebarLink to="Steps">Steps</SidebarLink>
+            <SidebarLink to="steps">Steps</SidebarLink>
             <SidebarLink to="trainers">Trainers</SidebarLink>
             <SidebarLink to="contact">Contact</SidebarLink>
           </SidebarMenu>

@@ -11,14 +11,14 @@ import {
 } from "./NavbarElements";
 import { FaBars } from "react-icons/fa";
 
-const Navbar = ({ isOpen, toggle }) => {
+const Navbar = ({ toggle }) => {
   return (
     <>
       <Nav>
         <NavContainer>
           <NavLogo to="/">Run Buddy</NavLogo>
           <Icon>
-            <FaBars onClick={() => toggle(!isOpen)} />
+            <FaBars onClick={() => toggle()} />
           </Icon>
           <NavUl>
             <NavLi>

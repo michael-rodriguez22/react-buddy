@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { Navbar, Sidebar } from "./components";
 import GlobalStyle from "./globalStyles";
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
 
 const theme = {
   primary: "#FCE138",
@@ -13,15 +13,15 @@ const theme = {
 };
 
 function App() {
-  const [sideOpen, toggleSideOpen] = useState(false);
-
   return (
     <>
       <Router>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <Sidebar isOpen={sideOpen} toggle={toggleSideOpen} />
-          <Navbar toggle={toggleSideOpen} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/signup" component={Signup} />
+          </Switch>
         </ThemeProvider>
       </Router>
     </>
