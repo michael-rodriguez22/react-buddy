@@ -4,7 +4,6 @@ import {
   NavLogo,
   Icon,
   NavUl,
-  NavLi,
   NavLink,
   NavButton,
   NavButtonLink,
@@ -18,21 +17,21 @@ const Navbar = ({ toggle }) => {
         <NavContainer>
           <NavLogo to="/">Run Buddy</NavLogo>
           <Icon>
-            <FaBars onClick={() => toggle()} />
+            <FaBars onClick={toggle} />
           </Icon>
           <NavUl>
-            <NavLi>
+            <li>
               <NavLink to="about">About</NavLink>
-            </NavLi>
-            <NavLi>
+            </li>
+            <li>
               <NavLink to="Steps">Steps</NavLink>
-            </NavLi>
-            <NavLi>
+            </li>
+            <li>
               <NavLink to="trainers">Trainers</NavLink>
-            </NavLi>
-            <NavLi>
+            </li>
+            <li>
               <NavLink to="contact">Contact</NavLink>
-            </NavLi>
+            </li>
           </NavUl>
           <NavButton>
             <NavButtonLink to="/signup">Sign Up!</NavButtonLink>

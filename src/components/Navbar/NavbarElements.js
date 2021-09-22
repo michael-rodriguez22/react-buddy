@@ -1,22 +1,22 @@
 import styled from "styled-components";
+import heroBg from "../../images/flipped-hero-image.jpg";
 import { Link as RouterLink } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: ${({ theme }) => theme.primary};
+  background-image: url(${heroBg});
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 80%;
   height: 80px;
-  /* margin-top: -80px; */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   position: sticky;
   top: 0;
-  z-index: 10;
-
-  @media screen and (max-width: 960px) {
-    transition: 1s all ease;
-  }
+  z-index: 100;
+  font-weight: bold;
 `;
 
 export const NavContainer = styled.div`
@@ -30,14 +30,14 @@ export const NavContainer = styled.div`
 `;
 
 export const NavLogo = styled(RouterLink)`
-  color: ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.primary};
+  text-shadow: 0 0 8px ${({ theme }) => theme.dark};
   justify-self: flex-start;
   cursor: pointer;
   font-size: 2rem;
   display: flex;
   align-items: center;
   margin-left: 20px;
-  font-weight: bold;
   text-decoration: none;
 `;
 
@@ -48,11 +48,10 @@ export const Icon = styled.div`
     cursor: pointer;
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
+    top: 1.5rem;
+    right: 1.5rem;
     font-size: 1.8rem;
-    color: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.primary};
   }
 `;
 
@@ -70,10 +69,6 @@ export const NavUl = styled.ul`
   }
 `;
 
-export const NavLi = styled.li`
-  height: 69px;
-`;
-
 export const NavLink = styled(ScrollLink)`
   cursor: pointer;
   color: ${({ theme }) => theme.secondary};
@@ -81,11 +76,16 @@ export const NavLink = styled(ScrollLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
+  padding: 0 0.6rem;
+  height: 69px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+  }
 
   &.active {
-    border-bottom: 3px solid ${({ theme }) => theme.secondary};
+    border-bottom: 4px solid ${({ theme }) => theme.primary};
   }
 `;
 
@@ -101,8 +101,8 @@ export const NavButton = styled.nav`
 export const NavButtonLink = styled(RouterLink)`
   cursor: pointer;
   border-radius: 50px;
-  background: ${({ theme }) => theme.tertiary};
-  color: ${({ theme }) => theme.light};
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
   border-radius: 50px;
   white-space: nowrap;
   padding: 10px 22px;
@@ -114,5 +114,6 @@ export const NavButtonLink = styled(RouterLink)`
 
   &:hover {
     background: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.light};
   }
 `;

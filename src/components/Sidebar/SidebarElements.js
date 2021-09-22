@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 export const SidebarContainer = styled.aside`
   background: ${({ theme }) => theme.dark};
-  border: 2px groove ${({ theme }) => theme.primary};
+  border: 3px solid ${({ theme }) => theme.secondary};
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -21,11 +21,11 @@ export const SidebarContainer = styled.aside`
 export const Icon = styled.div`
   cursor: pointer;
   position: absolute;
-  top: 1.2rem;
+  top: 1.5rem;
   right: 1.5rem;
   background: transparent;
   font-size: 2rem;
-  color: ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.primary};
   outline: none;
 `;
 
@@ -47,7 +47,7 @@ export const SidebarLink = styled(ScrollLink)`
   color: ${({ theme }) => theme.light};
 
   &:hover {
-    color: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.primary};
   }
 `;
 
@@ -59,10 +59,10 @@ export const SidebarButton = styled.div`
 export const SidebarButtonLink = styled(RouterLink)`
   cursor: pointer;
   border-radius: 50px;
-  background: ${({ theme }) => theme.tertiary};
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
   white-space: nowrap;
   padding: 1rem 4rem;
-  color: ${({ theme }) => theme.light};
   font-size: 1.5rem;
   outline: none;
   border: none;
@@ -71,5 +71,6 @@ export const SidebarButtonLink = styled(RouterLink)`
 
   &:hover {
     background: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.light};
   }
 `;
